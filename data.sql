@@ -1,1 +1,0 @@
-SELECT * FROM a07_student.mon_hoc;

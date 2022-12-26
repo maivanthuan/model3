@@ -1,4 +1,4 @@
-create database quan_ly_ban_hang;
+use quan_ly_ban_hang;
 create table Customer(
 cID int not null primary key,
 cName varchar(20),
@@ -27,16 +27,27 @@ pPrice int
 );
 insert into Customer
 values
-(2,'thuan',19),
-(4,'Mai', 19),
-(3,'Phuc',20);
-update Customer
-set cName='ly'
-where cID=1;
+(1,'Minh Quan',10),
+(2,'Ngoc Oanh', 20),
+(3,'Hong Ha',50);
 insert Order1
 values
-(1,2,'2003-10-31','hello'),
-(3,4,'1997-12-5','xinchao');
-delete  from order1
-where oID =1;
-select * from Order1;
+(1,1,'2006-3-21',null),
+(2,2,'1997-3-23',null),
+(3,1,'2006-3-16',null);
+insert into product
+values
+(1,'May giat',3),
+(2,'Tu lanh',5),
+(3,'Dieu hoa',7),
+(4,'Quat',1),
+(5,'Bep dien',2);
+insert into orderdetail
+values
+(1,1,3),
+(1,3,7),
+(1,4,2),
+(2,1,1),
+(3,1,8),
+(2,5,4),
+(2,3,3);
