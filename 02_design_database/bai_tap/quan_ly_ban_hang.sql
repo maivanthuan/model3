@@ -51,3 +51,14 @@ values
 (3,1,8),
 (2,5,4),
 (2,3,3);
+select o.oID, o.oDate, p.pPrice
+from order1 o join orderdetail o1 on o.oID = o1.oID join product p on o1.pID=p.pID;
+select c.cName as CustomerName, p.pName as productName
+from Customer c join order1 o on c.cID=o.oID join orderdetail od on o.oID=od.oID join product p on od.pID=p.pID;
+select cName as khach_hang_chua_mua
+from customer
+where not exists (select *from order1
+					where customer.cID=order1.cID);
+select o.oID,o.oDate, sum(o1.odQTY * p.pPrice) as 'Tong hoa don'
+from order1 o join orderdetail o1 on o.oID=o1.oID join product p on o1.pID=p.pID
+group by oID;
